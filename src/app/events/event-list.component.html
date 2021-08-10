@@ -1,0 +1,16 @@
+<div>
+  <h2>Upcoming Angular Events</h2>
+  <hr />
+  <div class="well overwell thumbnail">
+    <h3>{{event.name}}</h3>
+    <div>Date:  {{event.date}}</div>
+    <div>Time:  {{event.time}}</div>
+    <div>Price: ${{event.price}}</div>
+
+    <div>
+       <span>Location: {{event.location.address}}</span>
+       <span>&nbsp;</span>
+       <span>{{event.location.city}},  {{event.location.country}}</span>
+    </div>
+  </div>
+</div>
