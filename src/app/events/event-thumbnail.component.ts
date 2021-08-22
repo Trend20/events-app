@@ -7,7 +7,11 @@ import { Component, Input } from "@angular/core";
   <div class="well overwell thumbnail">
     <h3>{{event.name}}</h3>
     <div>Date:  {{event.date}}</div>
-    <div>Time:  {{event.time}}</div>
+    <div [ngSwitch]="event?.time">Time:  {{event.time}}
+      <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
+      <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
+      <span *ngSwitchDefault>(Normal Start)</span>
+    </div>
     <div>Price: \${{event.price}}</div>
 
     <div>
@@ -20,6 +24,7 @@ import { Component, Input } from "@angular/core";
   styles:[`
     .pad-left{ margin-left: 10px;}
     .well div{ color: #bbb}
+    .thumbnail{min-height: 210px}
   `]
 
 })
